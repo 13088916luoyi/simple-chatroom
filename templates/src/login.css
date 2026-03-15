@@ -1,0 +1,205 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('image1.png') no-repeat center center fixed;
+    background-size: cover;
+    position: relative;
+}
+
+.login-container {
+    position: relative;
+    z-index: 1;
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 50px 40px;
+    border-radius: 24px;
+    box-shadow: 
+        0 8px 32px rgba(31, 136, 203, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.4);
+    text-align: center;
+    width: 420px;
+    max-width: 90%;
+}
+
+.login-container h1 {
+    color: #1a5f9e;
+    margin-bottom: 12px;
+    font-size: 32px;
+    font-weight: 700;
+    text-shadow: 0 2px 4px rgba(255, 255, 255, 0.5);
+}
+
+.login-container .subtitle {
+    color: #4a7fb5;
+    margin-bottom: 35px;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.auth-selector {
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+.auth-selector label {
+    display: block;
+    margin-bottom: 12px;
+    color: #3a7ab8;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.auth-options {
+    display: flex;
+    gap: 15px;
+}
+
+.auth-option {
+    flex: 1;
+    padding: 16px 20px;
+    border: 2px solid rgba(135, 206, 250, 0.4);
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 14px;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.auth-option:hover {
+    background: rgba(255, 255, 255, 0.7);
+    border-color: rgba(100, 181, 246, 0.6);
+}
+
+.auth-option.active {
+    background: linear-gradient(135deg, rgba(135, 206, 250, 0.9) 0%, rgba(100, 181, 246, 0.9) 100%);
+    border-color: transparent;
+    color: white;
+    box-shadow: 0 4px 15px rgba(100, 181, 246, 0.4);
+}
+
+.auth-option-title {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.auth-option-desc {
+    font-size: 12px;
+    opacity: 0.8;
+}
+
+.auth-form {
+    display: none;
+}
+
+.auth-form.active {
+    display: block;
+}
+
+.input-group {
+    margin-bottom: 18px;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #3a7ab8;
+    font-size: 13px;
+    font-weight: 600;
+    padding-left: 4px;
+}
+
+.login-container input {
+    width: 100%;
+    padding: 16px 18px;
+    border: 2px solid rgba(135, 206, 250, 0.3);
+    border-radius: 14px;
+    font-size: 15px;
+    background: rgba(255, 255, 255, 0.6);
+    color: #2c5f8f;
+    transition: all 0.3s ease;
+}
+
+.login-container input::placeholder {
+    color: #8ab4d9;
+}
+
+.login-container input:focus {
+    outline: none;
+    border-color: rgba(100, 181, 246, 0.8);
+    background: rgba(255, 255, 255, 0.85);
+    box-shadow: 0 0 0 4px rgba(100, 181, 246, 0.15);
+}
+
+.login-container button[type="submit"] {
+    width: 100%;
+    padding: 16px;
+    background: linear-gradient(135deg, rgba(135, 206, 250, 0.95) 0%, rgba(66, 165, 245, 0.95) 100%);
+    border: none;
+    border-radius: 14px;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+    box-shadow: 0 4px 20px rgba(100, 181, 246, 0.35);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.login-container button[type="submit"]:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(100, 181, 246, 0.5);
+    background: linear-gradient(135deg, rgba(135, 206, 250, 1) 0%, rgba(66, 165, 245, 1) 100%);
+}
+
+.login-container button[type="submit"]:active {
+    transform: translateY(0);
+}
+
+.error-message {
+    color: #e74c3c;
+    font-size: 14px;
+    margin-bottom: 18px;
+    padding: 12px 16px;
+    background: rgba(231, 76, 60, 0.1);
+    border-radius: 10px;
+    border: 1px solid rgba(231, 76, 60, 0.2);
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .login-container {
+        padding: 35px 25px;
+        width: 92%;
+        border-radius: 20px;
+    }
+
+    .login-container h1 {
+        font-size: 26px;
+    }
+
+    .auth-options {
+        flex-direction: column;
+    }
+
+    .auth-option {
+        padding: 14px 16px;
+    }
+
+    .login-container input {
+        padding: 14px 16px;
+    }
+}

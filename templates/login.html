@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登录 - 在线聊天室</title>
+    <link rel="stylesheet" href="/src/login.css">
+</head>
+<body>
+    <div class="login-container">
+        <h1>在线聊天室</h1>
+        <p class="subtitle">登录或注册以开始聊天</p>
+        
+        <div class="auth-selector">
+            <label>请选择操作</label>
+            <div class="auth-options">
+                <div class="auth-option active" onclick="switchTab('login')">
+                    <div class="auth-option-title">登录</div>
+                    <div class="auth-option-desc">已有账号</div>
+                </div>
+                <div class="auth-option" onclick="switchTab('register')">
+                    <div class="auth-option-title">注册</div>
+                    <div class="auth-option-desc">创建新账号</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="error-message" id="errorMessage"></div>
+
+        <form class="auth-form active" id="loginForm" onsubmit="handleLogin(event)">
+            <div class="input-group">
+                <label>账号</label>
+                <input type="text" id="loginUsername" placeholder="请输入账号" maxlength="20" required>
+            </div>
+            <div class="input-group">
+                <label>密码</label>
+                <input type="password" id="loginPassword" placeholder="请输入密码" required>
+            </div>
+            <button type="submit">登录</button>
+        </form>
+
+        <form class="auth-form" id="registerForm" onsubmit="handleRegister(event)">
+            <div class="input-group">
+                <label>账号</label>
+                <input type="text" id="regUsername" placeholder="请输入账号" maxlength="20" required>
+            </div>
+            <div class="input-group">
+                <label>密码</label>
+                <input type="password" id="regPassword" placeholder="请输入密码" required>
+            </div>
+            <div class="input-group">
+                <label>昵称</label>
+                <input type="text" id="regNickname" placeholder="请输入昵称" maxlength="20" required>
+            </div>
+            <button type="submit">注册</button>
+        </form>
+    </div>
+
+    <script src="/src/login.js"></script>
+</body>
+</html>
